@@ -379,6 +379,7 @@ const TestCtrl = {
                     "name": "感情分類",
                     "children": parent,
                 };
+                logger.info(data);
                 
                 // 2. SVG表示用要素の設定
                 var svg = d3.select("#result").append("svg").attr("width", width).attr("height", height);

@@ -61,9 +61,24 @@
         <button id="sanshiro" type="button" class="btn btn-outline-success">三四郎（夏目漱石）</button>
         <button id="freeText" type="button" class="btn btn-outline-warning">任意のテキスト</button>
       </div>
+
       <div class="mb-3">
-        <label for="inputText" class="form-label">テキスト入力</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="inputCheck" id="inputCheckText" value="1" checked>
+          <label class="form-check-label" for="inputCheckText">
+            テキスト入力
+          </label>
+        </div>
         <textarea class="form-control" id="inputText" rows="7"></textarea>
+      </div>
+      <div class="mb-3">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="inputCheck" id="inputCheckUrl" value="2" >
+          <label class="form-check-label" for="inputCheckUrl">
+            URL入力
+          </label>
+        </div>
+        <input type="url" class="form-control" id="inputUrl" placeholder="https://example.com">
       </div>
       <div class="mb-3">
         <button id="send" type="button" class="btn btn-primary">分析</button>

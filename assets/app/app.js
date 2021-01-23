@@ -44,19 +44,35 @@ const TestCtrl = {
     },
 
     send: function UN_send(e) {
-        var _functionName = 'UN_send';
+        var _functionName = 'UN_send',
+            _check ='',
+            _text = '',
+            _url = '';
 
         try {
             Util.startWriteLog(TestCtrl._className,_functionName);
             // 処理開始
             $("#result").html("");
+            _check = $('input[name="inputCheck"]:checked').val();
+            if (_check == '1') {
+                _text = $('#inputText').val();
+            } else {
+                _url = $('#inputUrl').val();
+                if (!validURL(_url)) {
+                    alert('正しいURLを入力してください。');
+                    return;
+                }
+            }
+
             $('#send').prop('disabled', true);
             $.ajax({
                 url:'https://app.cotogoto.ai/webapi/emotionalExpression',
+                // url:'http://localhost:8080/webapi/emotionalExpression',
                 dataType:'json',
                 type:'post',
                 data:{
-                    'text': $('#inputText').val(),
+                    'text': _text,
+                    'url': _url,
                 }
             })
             // Ajaxリクエストが成功した時発動
@@ -424,6 +440,7 @@ const TestCtrl = {
             // Ajaxリクエストが失敗した時発動
             .fail( (data) => {
                 logger.error(data);
+                alert('error:' + data);
             })
             // Ajaxリクエストが成功・失敗どちらでも発動
             .always( (data) => {
@@ -444,3 +461,13 @@ const TestCtrl = {
 $(document).ready(function() {
     TestCtrl.init();
 });
+
+function validURL(str) {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return !!pattern.test(str);
+}

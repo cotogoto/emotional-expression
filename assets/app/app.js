@@ -21,13 +21,17 @@ const TestCtrl = {
                 TestCtrl.send(e);
             });
             $('#wagahaiwaNekodearu').click(function(e){
-                $("#inputText").load("wagahaiwa_nekodearu.txt");
+                $.get("wagahaiwa_nekodearu.txt", function(data){
+                    $("#inputText").val(data);
+                });
             });
             $('#sanshiro').click(function(e){
-                $("#inputText").load("sanshiro.txt");
+                $.get("sanshiro.txt", function(data){
+                    $("#inputText").val(data);
+                });
             });
             $('#freeText').click(function(e){
-                $("#inputText").html("");
+                $("#inputText").val("");
             });
             // 処理終了
         }

@@ -76,7 +76,8 @@ const TestCtrl = {
                 }
             })
             // Ajaxリクエストが成功した時発動
-            .done( (data) => {
+            .done( (ret) => {
+                logger.info(ret);
                 let joy1 = 0;
                 let joy2 = 0;
                 let joy3 = 0;
@@ -138,8 +139,8 @@ const TestCtrl = {
                 let relief = { "name": "安", "children": [] }
                 let astonishment = { "name": "驚", "children": [] }
           
-                for (const item in data) {
-                    const param = data[item];
+                for (const item in ret) {
+                    const param = ret[item];
                     joy1 += param.joy1;
                     joy2 += param.joy2;
                     joy3 += param.joy3;
@@ -379,7 +380,6 @@ const TestCtrl = {
                     "name": "感情分類",
                     "children": parent,
                 };
-                logger.info(data);
                 
                 // 2. SVG表示用要素の設定
                 var svg = d3.select("#result").append("svg").attr("width", width).attr("height", height);

@@ -12,26 +12,11 @@
 
   <!-- Bootstrap core CSS -->
   <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
   
   <!-- Custom styles for this template -->
   <link href="./assets/css/carousel.css" rel="stylesheet">
   <link href="./assets/css/sticky-footer-navbar.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
     
@@ -50,8 +35,7 @@
     <div class="carousel" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#aaa"/></svg>
-  
+          <img class="bd-placeholder-img" width="100%" height="100%" src="./assets/img/top-image.jpg" alt="top">
           <div class="container">
             <div class="carousel-caption text-start">
               <h1 class="display-4">Emotional Expression</h1>
@@ -68,9 +52,10 @@
       <div class="mb-3">
         <h2>実際に試してみましょう！</h2>
         <p>まずは、あなた自身が書いたテキスト（文章）が必要です。日々の経験や考えている事等に言及していれば、推定精度がより高くなります。</p>
-        <p>試しに利用してみる場合は、より正確な分析のために、長い文章が必要となります。</p>
+        <p>お試しで利用してみる場合は、より正確な分析のために、長い文章が必要となります。</p>
       </div>
-      <div class="mb-3">
+      
+      <div class="mb-3 ps-lg-4">
         <p>【サンプルテキスト】</p>
         <button id="wagahaiwaNekodearu" type="button" class="btn btn-outline-primary">吾輩は猫である（夏目漱石）</button>
         <button id="sanshiro" type="button" class="btn btn-outline-success">三四郎（夏目漱石）</button>
@@ -85,6 +70,11 @@
       </div>
       <div class="mb-3">
         <div id="result" class="text-center"></div>
+      </div>
+
+      <div class="mb-3">
+        <p>こちらの感情表現の分類をするために「長岡技術科学大学」の「<a href="http://www.jnlp.org/SNOW/D18" target="_blank">日本語感情表現辞書</a>」を利用させていただきました。</p>
+        <p></p>
       </div>
     </div>
   </main>

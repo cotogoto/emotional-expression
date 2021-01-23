@@ -50,11 +50,12 @@
     <div class="carousel" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#aaa"/></svg>
   
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1>Emotional Expression</h1>
+              <h1 class="display-4">Emotional Expression</h1>
+              <br>
               <p>テキストから筆者の感情分類を推定してみましょう。Emotional Expressionは、49種類の感情分類から、その筆者の感情を推測します。</p>
               <p>Let's estimate the author's emotion classification from the text. Emotional Expression infers the author's emotions from 49 types of emotion classification.(Japanese only)</p>
             </div>
@@ -73,6 +74,7 @@
         <p>【サンプルテキスト】</p>
         <button id="wagahaiwaNekodearu" type="button" class="btn btn-outline-primary">吾輩は猫である（夏目漱石）</button>
         <button id="sanshiro" type="button" class="btn btn-outline-primary">三四郎（夏目漱石）</button>
+        <button id="freeText" type="button" class="btn btn-outline-primary">任意のテキスト</button>
       </div>
       <div class="mb-3">
         <label for="inputText" class="form-label">テキスト入力</label>

@@ -26,6 +26,9 @@ const TestCtrl = {
             $('#sanshiro').click(function(e){
                 $("#inputText").load("sanshiro.txt");
             });
+            $('#freeText').click(function(e){
+                $("#inputText").html("");
+            });
             // 処理終了
         }
         catch (ex) {

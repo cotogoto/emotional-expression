@@ -439,9 +439,12 @@ const TestCtrl = {
 
             })
             // Ajaxリクエストが失敗した時発動
-            .fail( (data) => {
-                logger.error(data);
-                alert('error:' + printProperties(data));
+            .fail( (jqXHR, textStatus, errorThrown) => {
+                alert('感情分類の推定に失敗しました。');
+                console.log("ajax通信に失敗しました");
+                console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+                console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+                console.log("errorThrown    : " + errorThrown.message); // 例外情報
             })
             // Ajaxリクエストが成功・失敗どちらでも発動
             .always( (data) => {

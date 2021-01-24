@@ -441,7 +441,7 @@ const TestCtrl = {
             // Ajaxリクエストが失敗した時発動
             .fail( (data) => {
                 logger.error(data);
-                alert('error:' + data);
+                alert('error:' + printProperties(data));
             })
             // Ajaxリクエストが成功・失敗どちらでも発動
             .always( (data) => {
